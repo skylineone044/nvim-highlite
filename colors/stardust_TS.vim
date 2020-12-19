@@ -3,7 +3,7 @@ lua << EOF
 
 --[[ Highlite, a Neovim colorscheme template.
 	* Author:     Iron-E (https://github.com/Iron-E)
-	* Repository: https://github.com/nvim-highlite
+	* Repository: https://github.com/nvim-stardust_TS
 
 	Initially forked from vim-rnb, a Vim colorsheme template:
 	* Author:        Romain Lafourcade (https://github.com/romainl)
@@ -40,10 +40,10 @@ lua << EOF
 	| foo_bar           | foo_bar     | foo_bar.lua       |
 
 	Rename the following files:
-	* `colors/highlite.vim`
-	* `lua/highlite.lua`
+	* `colors/stardust_TS.vim`
+	* `lua/stardust_TS.lua`
 
-	Where 'highlite' is the name of your colorscheme.
+	Where 'stardust_TS' is the name of your colorscheme.
 
 	TIP: If you are on a Unix-based system (or have WSL on Windows) you can use the setup script at the root of this repo.
 	     See the README for more details.
@@ -58,7 +58,7 @@ lua << EOF
 ]]
 
 -- This is the name of your colorscheme which will be used as per |g:colors_name|.
-vim.g.colors_name = 'highlite'
+vim.g.colors_name = 'stardust_TS'
 
 --[[ Step 3: Colors
 	Next you will define all of the colors that you will use for the color scheme.
@@ -82,40 +82,40 @@ vim.g.colors_name = 'highlite'
 	NOTE: |Replace-mode| will probably be useful here.
 ]]
 
-local black       = {'#202020', 0,   'black'}
+local black       = {'#000000', 0,   'black'}
 local gray        = {'#808080', 244, 'gray'}
-local gray_dark   = {'#353535', 236, 'darkgrey'}
-local gray_darker = {'#505050', 244, 'gray'}
-local gray_light  = {'#c0c0c0', 251, 'gray'}
+local gray_dark   = {'#1c1c1c', 236, 'darkgrey'}
+local gray_darker = {'#262626', 244, 'gray'}
+local gray_light  = {'#767676', 251, 'gray'}
 local white       = {'#ffffff', 15,  'white'}
 
-local tan = {'#f4c069', 180, 'darkyellow'}
+local tan = {'#afaf00', 142, 'darkyellow'}
 
 local red       = {'#ee4a59', 196, 'red'}
-local red_dark  = {'#a80000', 124, 'darkred'}
-local red_light = {'#ff4090', 203, 'red'}
+local red_dark  = {'#870000', 88, 'darkred'}
+local red_light = {'#ff005f', 197, 'red'}
 
-local orange       = {'#ff8900', 208, 'darkyellow'}
+local orange       = {'#ffaf00', 214, 'darkyellow'}
 local orange_light = {'#f0af00', 214, 'yellow'}
 
-local yellow = {'#f0df33', 220, 'yellow'}
+local yellow = {'#ffff00', 226, 'yellow'}
 
-local green_dark  = {'#70d533', 83, 'darkgreen'}
-local green       = {'#22ff22', 72, 'green'}
-local green_light = {'#99ff99', 72, 'green'}
-local turqoise    = {'#2bff99', 33, 'green'}
+local green_dark  = {'#008000', 2, 'darkgreen'}
+local green       = {'#00d700', 40, 'green'}
+local green_light = {'#00ff00', 10, 'green'}
+local turqoise    = {'#008080', 6, 'green'}
 
-local blue = {'#7766ff', 63, 'blue'}
-local cyan = {'#33dbc3', 87, 'cyan'}
+local blue = {'#00afff', 39, 'blue'}
+local cyan = {'#00ffff', 51, 'cyan'}
 local ice  = {'#95c5ff', 63, 'cyan'}
 local teal = {'#60afff', 38, 'darkblue'}
 
-local magenta      = {'#d5508f', 126, 'magenta'}
-local magenta_dark = {'#bb0099', 126, 'darkmagenta'}
-local pink         = {'#ffa6ff', 162, 'magenta'}
-local pink_light   = {'#ffb7b7', 38,  'white'}
-local purple       = {'#cf55f0', 129, 'magenta'}
-local purple_light = {'#af60af', 63,  'magenta'}
+local magenta      = {'#ff00ff', 201, 'magenta'}
+local purple = {'#d75fff', 171, 'darkmagenta'}
+local pink         = {'#ff0087', 198, 'magenta'}
+-- local pink_light   = {'#ffb7b7', 38,  'white'}
+-- local purple       = {'#cf55f0', 129, 'magenta'}
+-- local purple_light = {'#af60af', 63,  'magenta'}
 
 --[[ Step 4: highlights
 	You can define highlight groups like this:
@@ -214,7 +214,7 @@ local purple_light = {'#af60af', 63,  'magenta'}
 	end
 ```
 
-	The function will be executed by |highlite| and transformed into the
+	The function will be executed by |stardust_TS| and transformed into the
 	expected result.
 	____________________________________________________________________________
 
@@ -236,7 +236,7 @@ local NONE = {}
 
 --[[ These are the ones you should edit. ]]
 -- This is the only highlight that must be defined separately.
-local highlight_group_normal = {fg=gray_light, bg=black}
+local highlight_group_normal = {fg=white, bg=black}
 
 -- This is where the rest of your highlights should go.
 local highlight_groups = {
@@ -247,39 +247,39 @@ local highlight_groups = {
 	Whitespace  = 'NonText',
 
 	--[[ 4.1.1. Literals]]
-	Constant = {fg=orange_light},
-	String = {fg=green_dark},
-	Character = {fg=red_light},
-	Number  = {fg=pink_light},
-	Boolean = {fg=yellow},
+	Constant = {fg=gray_light, style={'italic', 'bold'}},
+	String = {fg=orange},
+	Character = {fg=orange},
+	Number  = {fg=purple},
+	Boolean = {fg=cyan, style={'bold'}},
 	Float   = 'Number',
 
 	--[[ 4.1.2. Identifiers]]
 	Identifier = {fg=FG},
-	Function = {fg=purple},
+	Function = {fg=blue},
 
 	--[[ 4.1.3. Syntax]]
-	Statement   = {fg=ice},
-	Conditional = {fg=ice, style='italic'},
-	Repeat   = {fg=turqoise, style='italic'},
-	Label    = {fg=pink, style='bold'},
-	Operator = {fg=green, style='bold'},
-	Keyword  = {fg=teal},
+	Statement   = {fg=red_light},
+	Conditional = {fg=green_light, style={'bold'}},
+	Repeat   = {fg=green_light, style={'bold'}},
+	Label    = {fg=red_light, style='bold'},
+	Operator = {fg=gray_light},
+	Keyword  = {fg=red_light, style={'bold'}},
 	Exception = {fg=red_light, style='bold'},
 	Noise = 'Delimiter',
 
 	--[[ 4.1.4. Metatextual Information]]
-	PreProc = {fg=tan},
-	Include = {fg=green_light, style='nocombine'},
-	Define = {fg=blue, style='nocombine'},
+	PreProc = {fg=teal},
+	Include = {fg=pink, style='nocombine'},
+	Define = {fg=red_light, style='nocombine'},
 	Macro  = {fg=blue, style='italic'},
-	PreCondit = {fg=tan, style='italic'},
+	PreCondit = {fg=ice, style='italic'},
 
 	--[[ 4.1.5. Semantics]]
-	Type         = {fg=cyan},
+	Type         = {fg=red_light},
 	StorageClass = {fg=orange_light, style='bold'},
 	Structure = {fg=blue, style='bold'},
-	Typedef = {fg=cyan, style='italic'},
+	Typedef = {fg=blue, style='italic'},
 
 	--[[ 4.1.6. Edge Cases]]
 	Special = {fg=magenta, style='bold'},
@@ -291,17 +291,17 @@ local highlight_groups = {
 	Debug = 'WarningMsg',
 
 	--[[ 4.1.7. Help Syntax]]
-	Underlined = {fg=turqoise, style='underline'},
+	Underlined = {style='underline'},
 	Ignore = {fg=gray},
-	Error = {fg=white, bg=red_dark, style='bold'},
-	Todo = {fg=yellow, style={'bold', 'underline'}},
+	Error = {fg=red, style='bold'},
+	Todo = {fg=magenta, style={'bold', 'underline'}},
 	Hint = {fg=black, bg=magenta, style='bold'},
-	Info = function(self) return {fg=self.Hint.fg, bg=pink_light, style=self.Hint.style} end,
+	Info = function(self) return {fg=self.Hint.fg, bg=pink, style=self.Hint.style} end,
 	Warning = function(self) return {fg=self.Hint.fg, bg=orange, style=self.Hint.style} end,
 
 	--[[ 4.2... Editor UI  ]]
 	--[[ 4.2.1. Status Line]]
-	StatusLine = {fg=green_light, bg=gray_darker},
+	StatusLine = {fg=white, bg=blue},
 	StatusLineNC = function(self) return {fg=gray, bg=self.StatusLine.bg} end,
 	StatusLineTerm = 'StatusLine',
 	StatusLineTermNC = 'StatusLineNC',
@@ -316,7 +316,7 @@ local highlight_groups = {
 	--[[ 4.2.3. Conditional Line Highlighting]]
 	Conceal = 'NonText',
 	CursorLine   = {bg=gray_dark},
-	CursorLineNr = function(self) return {fg=pink, bg=self.CursorLine.bg} end,
+	CursorLineNr = function(self) return {fg=white, bg=self.CursorLine.bg} end,
 	debugBreakpoint = 'ErrorMsg',
 	debugPC = 'ColorColumn',
 	LineNr  = {fg=gray},
@@ -326,8 +326,8 @@ local highlight_groups = {
 
 	--[[ 4.2.4. Popup Menu]]
 	Pmenu = {fg=FG, bg=gray_dark},
-	PmenuSbar = {bg=black},
-	PmenuSel  = {fg=FG},
+	PmenuSbar = {bg=gray_dark},
+	PmenuSel  = {fg=black, bg=white},
 	PmenuThumb = {bg=white},
 	WildMenu = 'PmenuSel',
 
@@ -338,12 +338,12 @@ local highlight_groups = {
 	--[[ 4.2.6. Diffs]]
 	DiffAdd    = {fg=black, bg=green_dark},
 	DiffChange = NONE,
-	DiffDelete = function(self) return {fg=self.DiffAdd.fg, bg=red} end,
-	DiffText   = function(self) return {fg=self.DiffAdd.fg, bg=yellow} end,
+	DiffDelete = function(self) return {fg=self.DiffAdd.fg, bg=red_dark} end,
+	DiffText   = function(self) return {fg=self.DiffAdd.fg, bg=tan} end,
 
 	--[[ 4.2.7. Searching]]
 	IncSearch  = {style='inverse'},
-	MatchParen = {fg=green, style={'bold', 'underline'}},
+	MatchParen = {fg=yellow, style={'bold', 'underline'}},
 	Search = {style={'underline', color=white}},
 
 	--[[ 4.2.8. Spelling]]
@@ -353,13 +353,13 @@ local highlight_groups = {
 	SpellRare  = {style={'undercurl', color=orange}},
 
 	--[[ 4.2.9. Conditional Column Highlighting]]
-	ColorColumn = {style='inverse'},
+	ColorColumn = {bg=gray_dark},
 	SignColumn  = NONE,
 
 	--[[ 4.2.10. Messages]]
 	ErrorMsg = {fg=red, style='bold'},
 	HintMsg  = {fg=magenta, style='bold'},
-	InfoMsg  = {fg=pink_light, style='bold'},
+	InfoMsg  = {fg=pink, style='bold'},
 	ModeMsg  = {fg=yellow},
 	WarningMsg = {fg=orange, style='bold'},
 	Question   = {fg=orange_light, style='underline'},
@@ -726,7 +726,7 @@ local highlight_groups = {
 	--[[ 4.4.2. coc.nvim ]]
 	CocErrorHighlight = {style={'undercurl', color='red'}},
 	CocHintHighlight  = {style={'undercurl', color='magenta'}},
-	CocInfoHighlight  = {style={'undercurl', color='pink_light'}},
+	CocInfoHighlight  = {style={'undercurl', color='pink'}},
 	CocWarningHighlight = {style={'undercurl', color='orange'}},
 	CocErrorSign = 'ALEErrorSign',
 	CocHintSign  = 'HintMsg',
@@ -738,7 +738,7 @@ local highlight_groups = {
 	JumpMotion = 'EasyMotion',
 
 	--[[ 4.4.4. vim-gitgutter / vim-signify ]]
-	GitGutterAdd    = {fg = green},
+	GitGutterAdd    = {fg = green_light},
 	GitGutterChange = {fg = yellow},
 	GitGutterDelete = {fg = red},
 	GitGutterChangeDelete = {fg=orange},
@@ -839,10 +839,10 @@ local highlight_groups = {
 local terminal_ansi_colors = {
 	[1]  = black,
 	[2]  = red_dark,
-	[3]  = green_dark,
+	[3]  = green,
 	[4]  = orange,
 	[5]  = blue,
-	[6]  = magenta_dark,
+	[6]  = purple,
 	[7]  = teal,
 	[8]  = gray,
 	[9]  = gray_dark,
@@ -858,7 +858,7 @@ local terminal_ansi_colors = {
 --[[ Step 5: Sourcing
 	When you wish to load your colorscheme, simply add this folder with a plugin manager
 	and then use `colorscheme <your colorscheme name>`. For example, in my configuration,
-	I source highlite by using `colorscheme highlite`.
+	I source stardust_TS by using `colorscheme stardust_TS`.
 
 	These online resources can help you design your colorscheme:
 
