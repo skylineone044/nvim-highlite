@@ -105,7 +105,7 @@ local green       = {'#00d700', 40, 'green'}
 local green_light = {'#00ff00', 10, 'green'}
 local turqoise    = {'#008080', 6, 'green'}
 
-local blue = {'#00afff', 39, 'blue'}
+local blue = {'#2ebdff', 39, 'blue'}
 local cyan = {'#00ffff', 51, 'cyan'}
 local ice  = {'#95c5ff', 63, 'cyan'}
 local teal = {'#60afff', 38, 'darkblue'}
@@ -263,8 +263,8 @@ local highlight_groups = {
 	Conditional = {fg=green_light, style={'bold'}},
 	Repeat   = {fg=green_light, style={'bold'}},
 	Label    = {fg=red_light, style='bold'},
-	Operator = {fg=gray_light},
-	Keyword  = {fg=red_light, style={'bold'}},
+	Operator = {fg=cyan, style={'italic', 'bold'}},
+	Keyword  = {fg=blue, style={'bold'}},
 	Exception = {fg=red_light, style='bold'},
 	Noise = 'Delimiter',
 
@@ -276,25 +276,25 @@ local highlight_groups = {
 	PreCondit = {fg=ice, style='italic'},
 
 	--[[ 4.1.5. Semantics]]
-	Type         = {fg=red_light},
+	Type         = {fg=red_light, style={'italic'}},
 	StorageClass = {fg=orange_light, style='bold'},
 	Structure = {fg=blue, style='bold'},
 	Typedef = {fg=blue, style='italic'},
 
 	--[[ 4.1.6. Edge Cases]]
-	Special = {fg=magenta, style='bold'},
+	Special = {fg=yellow, style='bold'},
 	SpecialChar = {fg=red_light, style='italic'},
 	SpecialKey = 'Character',
 	Tag = 'Underlined',
 	Delimiter = {fg=white},
-	SpecialComment = {fg=gray, style={'bold', 'nocombine'}},
+	SpecialComment = {fg=gray, style={'italic', 'nocombine'}},
 	Debug = 'WarningMsg',
 
 	--[[ 4.1.7. Help Syntax]]
 	Underlined = {style='underline'},
 	Ignore = {fg=gray},
 	Error = {fg=red, style='bold'},
-	Todo = {fg=magenta, style={'bold', 'underline'}},
+	Todo = {fg=white, bg=magenta, style={'bold'}},
 	Hint = {fg=black, bg=magenta, style='bold'},
 	Info = function(self) return {fg=self.Hint.fg, bg=pink, style=self.Hint.style} end,
 	Warning = function(self) return {fg=self.Hint.fg, bg=orange, style=self.Hint.style} end,
@@ -392,7 +392,7 @@ local highlight_groups = {
 	CursorColumn = {bg=gray_dark},
 
 	--[[ 4.2.13. Misc ]]
-	Directory = {fg=ice, style='bold'},
+	Directory = {fg=blue, style={'italic', 'underline'}},
 
 	--[[ 4.3. Programming Languages
 		Everything in this section is OPTIONAL. Feel free to remove everything
