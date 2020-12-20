@@ -264,7 +264,7 @@ local highlight_groups = {
 	Repeat   = {fg=green_light, style={'bold'}},
 	Label    = {fg=red_light, style='bold'},
 	Operator = {fg=cyan, style={'italic', 'bold'}},
-	Keyword  = {fg=blue, style={'bold'}},
+	Keyword  = {fg=red_light, style={'bold'}},
 	Exception = {fg=red_light, style='bold'},
 	Noise = 'Delimiter',
 
