@@ -91,31 +91,29 @@ local white       = {'#ffffff', 15,  'white'}
 
 local tan = {'#afaf00', 142, 'darkyellow'}
 
-local red       = {'#ee4a59', 196, 'red'}
+local red       = {'#ff2b32', 1, 'red'}
+local red_light       = {'#ff4a50', 9, 'red'}
 local red_dark  = {'#870000', 88, 'darkred'}
-local red_light = {'#ff005f', 197, 'red'}
 
 local orange       = {'#ffaf00', 214, 'darkyellow'}
-local orange_light = {'#f0af00', 214, 'yellow'}
+local yellow = {'#ffdf25', 11, 'yellow'}
 
-local yellow = {'#ffff00', 226, 'yellow'}
-
-local green_dark  = {'#008000', 2, 'darkgreen'}
+local green_dark  = {'#29d10c', 2, 'darkgreen'}
 local green       = {'#00d700', 40, 'green'}
 local green_light = {'#00ff00', 10, 'green'}
-local turqoise    = {'#008080', 6, 'green'}
+local turqoise    = {'#22bcb7', 6, 'green'}
 
-local blue = {'#2ebdff', 39, 'blue'}
+local blue = {'#10a4ff', 4, 'blue'}
 local cyan = {'#00ffff', 51, 'cyan'}
-local ice  = {'#95c5ff', 63, 'cyan'}
-local teal = {'#60afff', 38, 'darkblue'}
+local teal = {'#00afd7', 38, 'darkblue'}
 
 local magenta      = {'#ff00ff', 201, 'magenta'}
+
 local purple = {'#d75fff', 171, 'darkmagenta'}
+local purlple_light  = {'#5f5fff', 63, 'cyan'}
+
 local pink         = {'#ff0087', 198, 'magenta'}
--- local pink_light   = {'#ffb7b7', 38,  'white'}
--- local purple       = {'#cf55f0', 129, 'magenta'}
--- local purple_light = {'#af60af', 63,  'magenta'}
+local reddish_pink = {'#ff005f', 197, 'red'}
 
 --[[ Step 4: highlights
 	You can define highlight groups like this:
@@ -259,31 +257,31 @@ local highlight_groups = {
 	Function = {fg=blue},
 
 	--[[ 4.1.3. Syntax]]
-	Statement   = {fg=red_light},
+	Statement   = {fg=reddish_pink},
 	Conditional = {fg=green_light, style={'bold'}},
 	Repeat   = {fg=green_light, style={'bold'}},
-	Label    = {fg=red_light, style='bold'},
+	Label    = {fg=reddish_pink, style='bold'},
 	Operator = {fg=cyan, style={'italic', 'bold'}},
-	Keyword  = {fg=red_light, style={'bold'}},
-	Exception = {fg=red_light, style='bold'},
+	Keyword  = {fg=reddish_pink, style={'bold'}},
+	Exception = {fg=reddish_pink, style='bold'},
 	Noise = 'Delimiter',
 
 	--[[ 4.1.4. Metatextual Information]]
 	PreProc = {fg=teal},
 	Include = {fg=pink, style='nocombine'},
-	Define = {fg=red_light, style='nocombine'},
+	Define = {fg=reddish_pink, style='nocombine'},
 	Macro  = {fg=blue, style='italic'},
-	PreCondit = {fg=ice, style='italic'},
+	PreCondit = {fg=purlple_light, style='italic'},
 
 	--[[ 4.1.5. Semantics]]
-	Type         = {fg=red_light, style={'italic'}},
-	StorageClass = {fg=orange_light, style='bold'},
+	Type         = {fg=reddish_pink, style={'italic'}},
+	StorageClass = {fg=orange, style='bold'},
 	Structure = {fg=blue, style='bold'},
 	Typedef = {fg=blue, style='italic'},
 
 	--[[ 4.1.6. Edge Cases]]
 	Special = {fg=yellow, style='bold'},
-	SpecialChar = {fg=red_light, style='italic'},
+	SpecialChar = {fg=reddish_pink, style='italic'},
 	SpecialKey = 'Character',
 	Tag = 'Underlined',
 	Delimiter = {fg=white},
@@ -362,7 +360,7 @@ local highlight_groups = {
 	InfoMsg  = {fg=pink, style='bold'},
 	ModeMsg  = {fg=yellow},
 	WarningMsg = {fg=orange, style='bold'},
-	Question   = {fg=orange_light, style='underline'},
+	Question   = {fg=orange, style='underline'},
 
 	--[[ 4.2.11. LSP ]]
 	LspDiagnosticsDefaultError = 'Error',
