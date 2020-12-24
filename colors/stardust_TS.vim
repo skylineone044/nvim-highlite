@@ -96,7 +96,7 @@ local red_light       = {'#ff4a50', 9, 'red'}
 local red_dark  = {'#870000', 88, 'darkred'}
 
 local orange       = {'#ffaf00', 214, 'darkyellow'}
-local yellow = {'#ffdf25', 11, 'yellow'}
+local yellow = {'#ffff00', 226, 'yellow'}
 
 local green_dark  = {'#29d10c', 2, 'darkgreen'}
 local green       = {'#00d700', 40, 'green'}
@@ -253,7 +253,7 @@ local highlight_groups = {
 	Float   = 'Number',
 
 	--[[ 4.1.2. Identifiers]]
-	Identifier = {fg=FG},
+	Identifier = {fg=FG, style={'italic'}},
 	Function = {fg=blue},
 
 	--[[ 4.1.3. Syntax]]
