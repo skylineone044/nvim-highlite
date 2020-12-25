@@ -252,8 +252,8 @@ local highlight_groups = {
 	Boolean = {fg=cyan, style={'bold'}},
 	Float   = 'Number',
 
+    Identifier = {fg=yellow, style={'italic'}},
 	--[[ 4.1.2. Identifiers]]
-	Identifier = {fg=FG, style={'italic'}},
 	Function = {fg=blue},
 
 	--[[ 4.1.3. Syntax]]
@@ -280,7 +280,7 @@ local highlight_groups = {
 	Typedef = {fg=blue, style='italic'},
 
 	--[[ 4.1.6. Edge Cases]]
-	Special = {fg=yellow, style='bold'},
+	Special = {fg=yellow, style={'italic', 'bold'}},
 	SpecialChar = {fg=reddish_pink, style='italic'},
 	SpecialKey = 'Character',
 	Tag = 'Underlined',
