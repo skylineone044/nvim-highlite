@@ -104,6 +104,7 @@ local green_light = {'#00ff00', 10, 'green'}
 local turqoise    = {'#22bcb7', 6, 'green'}
 
 local blue = {'#10a4ff', 4, 'blue'}
+local light_blue = {'#0087af', 12, 'lightblue'}
 local cyan = {'#00ffff', 51, 'cyan'}
 local teal = {'#00afd7', 38, 'darkblue'}
 
@@ -254,7 +255,7 @@ local highlight_groups = {
 
     Identifier = {fg=yellow, style={'italic'}},
 	--[[ 4.1.2. Identifiers]]
-	Function = {fg=blue},
+	Function = {fg=light_blue, style={'bold'}},
 
 	--[[ 4.1.3. Syntax]]
 	Statement   = {fg=reddish_pink},
