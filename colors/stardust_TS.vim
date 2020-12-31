@@ -255,7 +255,7 @@ local highlight_groups = {
 
     Identifier = {fg=yellow, style={'italic'}},
 	--[[ 4.1.2. Identifiers]]
-	Function = {fg=light_blue, style={'bold'}},
+	Function = {fg=blue, style={'bold'}},
 
 	--[[ 4.1.3. Syntax]]
 	Statement   = {fg=reddish_pink},
