@@ -253,8 +253,8 @@ local highlight_groups = {
 	Boolean = {fg=cyan, style={'bold'}},
 	Float   = 'Number',
 
-    Identifier = {fg=yellow, style={'italic'}},
 	--[[ 4.1.2. Identifiers]]
+    Identifier = {fg=white, style={'italic'}},
 	Function = {fg=blue, style={'bold'}},
 
 	--[[ 4.1.3. Syntax]]
