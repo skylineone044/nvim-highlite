@@ -83,17 +83,17 @@ vim.g.colors_name = 'stardust_TS'
 ]]
 
 local black       = {'#000000', 0,   'black'}
-local gray        = {'#808080', 244, 'gray'}
 local gray_dark   = {'#1c1c1c', 236, 'darkgrey'}
 local gray_darker = {'#262626', 244, 'gray'}
 local gray_light  = {'#767676', 251, 'gray'}
+local gray        = {'#808080', 244, 'gray'}
 local white       = {'#ffffff', 15,  'white'}
 
 local tan = {'#afaf00', 142, 'darkyellow'}
 
+local red_dark  = {'#870000', 88, 'darkred'}
 local red       = {'#ff2b32', 1, 'red'}
 local red_light       = {'#ff4a50', 9, 'red'}
-local red_dark  = {'#870000', 88, 'darkred'}
 
 local orange       = {'#ffaf00', 214, 'darkyellow'}
 local yellow = {'#ffff00', 226, 'yellow'}
