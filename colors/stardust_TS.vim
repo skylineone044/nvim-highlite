@@ -82,6 +82,7 @@ vim.g.colors_name = 'stardust_TS'
 	NOTE: |Replace-mode| will probably be useful here.
 ]]
 
+-- PALETTE
 local black         = {'#000000', 0,   'black'}
 local gray_dark     = {'#1c1c1c', 236, 'darkgrey'}
 local gray_mid      = {'#262626', 244, 'gray'}
@@ -89,7 +90,6 @@ local gray_light    = {'#767676', 251, 'gray'}
 local gray          = {'#808080', 244, 'gray'}
 local white_dark    = {'#cccccc', 254,  'white'}
 local white         = {'#ffffff', 15,  'white'}
-
 
 local red_dark      = {'#870000', 88, 'darkred'}
 local red           = {'#ff2b32', 1, 'red'}
@@ -107,8 +107,8 @@ local green         = {'#29d10c', 2, 'green'}
 local green_light   = {'#00ff00', 10, 'green'}
 
 local blue_dark     = {'#005285', 18, 'darkblue'}
-local blue          = {'#10a4ff', 4, 'blue'}
 local blue_mid      = {'#5f5fff', 63, 'cyan'}
+local blue          = {'#10a4ff', 4, 'blue'}
 local blue_light    = {'#5cc1ff', 12, 'lightblue'}
 
 local turqoise_dark = {'#008080', 6, 'darkgreen'}
@@ -396,7 +396,7 @@ local highlight_groups = {
 	CursorColumn = {bg=gray_dark},
 
 	--[[ 4.2.13. Misc ]]
-	Directory = {fg=white_dark, style={'italic', 'underline'}},
+	Directory = {fg=white_dark, style={'italic'}},
 
 	--[[ 4.3. Programming Languages
 		Everything in this section is OPTIONAL. Feel free to remove everything
