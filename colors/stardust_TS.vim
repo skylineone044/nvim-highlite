@@ -82,39 +82,44 @@ vim.g.colors_name = 'stardust_TS'
 	NOTE: |Replace-mode| will probably be useful here.
 ]]
 
-local black       = {'#000000', 0,   'black'}
-local gray_dark   = {'#1c1c1c', 236, 'darkgrey'}
-local gray_darker = {'#262626', 244, 'gray'}
-local gray_light  = {'#767676', 251, 'gray'}
-local gray        = {'#808080', 244, 'gray'}
-local white       = {'#ffffff', 15,  'white'}
+local black         = {'#000000', 0,   'black'}
+local gray_dark     = {'#1c1c1c', 236, 'darkgrey'}
+local gray_mid      = {'#262626', 244, 'gray'}
+local gray_light    = {'#767676', 251, 'gray'}
+local gray          = {'#808080', 244, 'gray'}
+local white_dark    = {'#cccccc', 254,  'white'}
+local white         = {'#ffffff', 15,  'white'}
 
-local tan = {'#afaf00', 142, 'darkyellow'}
 
-local red_dark  = {'#870000', 88, 'darkred'}
-local red       = {'#ff2b32', 1, 'red'}
-local red_light       = {'#ff4a50', 9, 'red'}
+local red_dark      = {'#870000', 88, 'darkred'}
+local red           = {'#ff2b32', 1, 'red'}
+local red_light     = {'#ff595f', 9, 'red'}
+local reddish_pink  = {'#ff0a48', 197, 'red'}
+local pink          = {'#ff0087', 198, 'magenta'}
 
-local orange       = {'#ffaf00', 214, 'darkyellow'}
-local yellow = {'#ffff00', 226, 'yellow'}
+local orange_mid    = {'#ff7b00', 208, 'orange'}
+local orange        = {'#ffaf00', 214, 'darkyellow'}
+local yellow_dark   = {'#afaf00', 142, 'darkyellow'}
+local yellow        = {'#ffff00', 226, 'yellow'}
 
-local green_dark  = {'#29d10c', 2, 'darkgreen'}
-local green       = {'#00d700', 40, 'green'}
-local green_light = {'#00ff00', 10, 'green'}
-local turqoise    = {'#22bcb7', 6, 'green'}
+local green_dark    = {'#008000', 2, 'darkgreen'}
+local green         = {'#29d10c', 2, 'green'}
+local green_light   = {'#00ff00', 10, 'green'}
 
-local blue = {'#10a4ff', 4, 'blue'}
-local light_blue = {'#0087af', 12, 'lightblue'}
-local cyan = {'#00ffff', 51, 'cyan'}
-local teal = {'#00afd7', 38, 'darkblue'}
+local blue_dark     = {'#005285', 18, 'darkblue'}
+local blue          = {'#10a4ff', 4, 'blue'}
+local blue_mid      = {'#5f5fff', 63, 'cyan'}
+local blue_light    = {'#5cc1ff', 12, 'lightblue'}
 
-local magenta      = {'#ff00ff', 201, 'magenta'}
+local turqoise_dark = {'#008080', 6, 'darkgreen'}
+local turqoise      = {'#22bcb7', 6, 'green'}
+local teal          = {'#00afd7', 38, 'darkblue'}
+local cyan          = {'#00ffff', 51, 'cyan'}
 
-local purple = {'#d75fff', 171, 'darkmagenta'}
-local purlple_light  = {'#5f5fff', 63, 'cyan'}
+local magenta       = {'#ff00ff', 201, 'magenta'}
 
-local pink         = {'#ff0087', 198, 'magenta'}
-local reddish_pink = {'#ff005f', 197, 'red'}
+local purple        = {'#d75fff', 171, 'darkmagenta'}
+
 
 --[[ Step 4: highlights
 	You can define highlight groups like this:
@@ -241,12 +246,12 @@ local highlight_group_normal = {fg=white, bg=black}
 local highlight_groups = {
 	--[[ 4.1. Text Analysis ]]
 	Comment = {fg=gray, style='italic'},
-	NonText = {fg=gray_darker},
+	NonText = {fg=gray_light},
 	EndOfBuffer = 'NonText',
 	Whitespace  = 'NonText',
 
 	--[[ 4.1.1. Literals]]
-	Constant = {fg=gray_light, style={'italic', 'bold'}},
+	Constant = {fg=white_dark, style={'italic', 'bold'}},
 	String = {fg=orange},
 	Character = {fg=orange},
 	Number  = {fg=purple},
@@ -264,19 +269,19 @@ local highlight_groups = {
 	Label    = {fg=reddish_pink, style='bold'},
 	Operator = {fg=cyan, style={'italic', 'bold'}},
 	Keyword  = {fg=reddish_pink, style={'bold'}},
-	Exception = {fg=reddish_pink, style='bold'},
+	Exception = {fg=red_light, style='bold'},
 	Noise = 'Delimiter',
 
 	--[[ 4.1.4. Metatextual Information]]
 	PreProc = {fg=teal},
 	Include = {fg=pink, style='nocombine'},
 	Define = {fg=reddish_pink, style='nocombine'},
-	Macro  = {fg=blue, style='italic'},
-	PreCondit = {fg=purlple_light, style='italic'},
+	Macro  = {fg=blue_light, style='italic'},
+	PreCondit = {fg=blue_mid, style='italic'},
 
 	--[[ 4.1.5. Semantics]]
 	Type         = {fg=reddish_pink, style={'italic'}},
-	StorageClass = {fg=orange, style='bold'},
+	StorageClass = {fg=orange_mid, style='bold'},
 	Structure = {fg=blue, style='bold'},
 	Typedef = {fg=blue, style='italic'},
 
@@ -294,9 +299,9 @@ local highlight_groups = {
 	Ignore = {fg=gray},
 	Error = {fg=red, style='bold'},
 	Todo = {fg=white, bg=magenta, style={'bold'}},
-	Hint = {fg=black, bg=magenta, style='bold'},
-	Info = function(self) return {fg=self.Hint.fg, bg=pink, style=self.Hint.style} end,
-	Warning = function(self) return {fg=self.Hint.fg, bg=orange, style=self.Hint.style} end,
+	Hint = {fg=black, bg=yellow, style='bold'},
+	Info = function(self) return {fg=white, bg=pink, style=self.Hint.style} end,
+	Warning = function(self) return {fg=white, bg=orange, style=self.Hint.style} end,
 
 	--[[ 4.2... Editor UI  ]]
 	--[[ 4.2.1. Status Line]]
@@ -307,21 +312,21 @@ local highlight_groups = {
 
 	--[[ 4.2.2. Separators]]
 	VertSplit = {fg=white},
-	TabLine = {fg=FG, bg=gray_darker},
-	TabLineFill = {fg=gray_darker, bg=black},
+	TabLine = {fg=FG, bg=gray_mid},
+	TabLineFill = {fg=gray_mid, bg=black},
 	TabLineSel = {fg=FG, bg=BG},
 	Title = {style='bold'},
 
 	--[[ 4.2.3. Conditional Line Highlighting]]
 	Conceal = 'NonText',
-	CursorLine   = {bg=gray_dark},
+	CursorLine   = {bg=gray_mid},
 	CursorLineNr = function(self) return {fg=white, bg=self.CursorLine.bg} end,
 	debugBreakpoint = 'ErrorMsg',
 	debugPC = 'ColorColumn',
 	LineNr  = {fg=gray},
-	QuickFixLine = {bg=gray_darker},
+	QuickFixLine = {bg=gray_mid},
 	Visual    = {style='inverse'},
-	VisualNOS = {bg=gray_darker},
+	VisualNOS = {bg=gray_mid},
 
 	--[[ 4.2.4. Popup Menu]]
 	Pmenu = {fg=FG, bg=gray_dark},
@@ -331,14 +336,14 @@ local highlight_groups = {
 	WildMenu = 'PmenuSel',
 
 	--[[ 4.2.5. Folds]]
-	FoldColumn = {bg=gray_darker, style='bold'},
+	FoldColumn = {bg=gray_mid, style='bold'},
 	Folded = {fg=black,  bg=purple_light, style='italic'},
 
 	--[[ 4.2.6. Diffs]]
-	DiffAdd    = {fg=black, bg=green_dark},
-	DiffChange = NONE,
+	DiffAdd    = {fg=white, bg=green_dark},
+	DiffChange = {fg=white, bg=yellow_dark},
 	DiffDelete = function(self) return {fg=self.DiffAdd.fg, bg=red_dark} end,
-	DiffText   = function(self) return {fg=self.DiffAdd.fg, bg=tan} end,
+	DiffText   = function(self) return {fg=self.DiffAdd.fg, bg=yellow_dark} end,
 
 	--[[ 4.2.7. Searching]]
 	IncSearch  = {style='inverse'},
@@ -356,11 +361,11 @@ local highlight_groups = {
 	SignColumn  = NONE,
 
 	--[[ 4.2.10. Messages]]
-	ErrorMsg = {fg=red, style='bold'},
-	HintMsg  = {fg=magenta, style='bold'},
-	InfoMsg  = {fg=pink, style='bold'},
+	ErrorMsg = {fg=red, bg=gray_dark},
+	HintMsg  = {fg=yellow, bg=gray_dark},
+	InfoMsg  = {fg=green_light, bg=gray_dark},
 	ModeMsg  = {fg=yellow},
-	WarningMsg = {fg=orange, style='bold'},
+	WarningMsg = {fg=orange, bg=gray_dark},
 	Question   = {fg=orange, style='underline'},
 
 	--[[ 4.2.11. LSP ]]
@@ -391,7 +396,7 @@ local highlight_groups = {
 	CursorColumn = {bg=gray_dark},
 
 	--[[ 4.2.13. Misc ]]
-	Directory = {fg=blue, style={'italic', 'underline'}},
+	Directory = {fg=white_dark, style={'italic', 'underline'}},
 
 	--[[ 4.3. Programming Languages
 		Everything in this section is OPTIONAL. Feel free to remove everything
@@ -748,7 +753,7 @@ local highlight_groups = {
 	SignifySignChangeDelete = 'GitGutterChangeDelete',
 
 	--[[ 4.4.5. vim-indent-guides ]]
-	IndentGuidesOdd  = {bg=gray_darker},
+	IndentGuidesOdd  = {bg=gray_mid},
 	IndentGuidesEven = {bg=gray},
 
 	--[[ 4.4.7. NERDTree ]]
@@ -773,7 +778,7 @@ local highlight_groups = {
 	--[[ 4.4.9. barbar.nvim ]]
 	BufferCurrent       = 'TabLineSel',
 	BufferCurrentIndex  = function(self) return {fg=self.InfoMsg.fg, bg=self.BufferCurrent.bg} end,
-	BufferCurrentMod    = {fg=tan, bg=black, style='bold'},
+	BufferCurrentMod    = {fg=yellow_dark, bg=black, style='bold'},
 	BufferCurrentSign   = 'HintMsg',
 	BufferCurrentTarget = 'BufferCurrentSign',
 
@@ -788,7 +793,7 @@ local highlight_groups = {
 
 	BufferVisible       = 'TabLine',
 	BufferVisibleIndex  = function(self) return {fg=self.InfoMsg.fg, bg=self.BufferVisible.bg} end,
-	BufferVisibleMod    = {fg=white, bg=gray_darker, style='italic'},
+	BufferVisibleMod    = {fg=white, bg=gray_mid, style='italic'},
 	BufferVisibleSign   = 'BufferVisible',
 	BufferVisibleTarget = function(self)
 		local parent = self.BufferVisibleMod
