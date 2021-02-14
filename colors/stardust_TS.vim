@@ -259,14 +259,14 @@ local highlight_groups = {
 	Float   = 'Number',
 
 	--[[ 4.1.2. Identifiers]]
-    Identifier = {fg=white, style={'italic'}},
+    Identifier = {fg=white_dark, style={'italic'}},
 	Function = {fg=blue, style={'bold'}},
 
 	--[[ 4.1.3. Syntax]]
 	Statement   = {fg=reddish_pink},
 	Conditional = {fg=green_light, style={'bold'}},
 	Repeat   = {fg=green_light, style={'bold'}},
-	Label    = {fg=reddish_pink, style='bold'},
+	Label    = {fg=reddish_pink, style='italic'},
 	Operator = {fg=cyan, style={'italic', 'bold'}},
 	Keyword  = {fg=reddish_pink, style={'bold'}},
 	Exception = {fg=red_light, style='bold'},
@@ -274,8 +274,8 @@ local highlight_groups = {
 
 	--[[ 4.1.4. Metatextual Information]]
 	PreProc = {fg=teal},
-	Include = {fg=pink, style='nocombine'},
-	Define = {fg=reddish_pink, style='nocombine'},
+	Include = {fg=pink},
+	Define = {fg=reddish_pink},
 	Macro  = {fg=blue_light, style='italic'},
 	PreCondit = {fg=blue_mid, style='italic'},
 
@@ -542,9 +542,9 @@ local highlight_groups = {
 	markdownH1 = {fg=red, style='bold'},
 	markdownH2 = {fg=orange, style='bold'},
 	markdownH3 = {fg=yellow, style='bold'},
-	markdownH4 = {fg=green_dark, style='bold'},
+	markdownH4 = {fg=green_light, style='bold'},
 	markdownH5 = {fg=cyan, style='bold'},
-	markdownH6 = {fg=purple_light, style='bold'},
+	markdownH6 = {fg=magenta, style='bold'},
 	mkdBold = 'Ignore',
 	mkdCode = 'Keyword',
 	mkdCodeDelimiter = 'mkdBold',
